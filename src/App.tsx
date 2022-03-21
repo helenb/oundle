@@ -78,10 +78,11 @@ function App() {
             fontStyle: difficulty > 1 ? "italic" : "inherit",
           }}
         >
-          o
+          O
         </span>
         undle
       </h1>
+      <h2>The word game for British place names</h2>
       <div className="top-right">
         {page !== "game" ? (
           link("❌", "Close", "game")
@@ -147,7 +148,7 @@ function App() {
               >
                 {
                   [
-                    `Guesses must be valid dictionary words.`,
+                    `Guesses must be valid UK place names.`,
                     `Wordle's "Hard Mode". Green letters must stay fixed, and yellow letters must be reused.`,
                     `An even stricter Hard Mode. Yellow letters must move away from where they were clued, and gray clues must be obeyed.`,
                   ][difficulty]

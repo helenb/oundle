@@ -179,7 +179,7 @@ function Game(props: GameProps) {
         return;
       }
       if (!dictionary.includes(currentGuess)) {
-        setHint("Not a valid word");
+        setHint("Not a valid place");
         return;
       }
       for (const g of guesses) {
@@ -261,7 +261,7 @@ function Game(props: GameProps) {
   return (
     <div className="Game" style={{ display: props.hidden ? "none" : "block" }}>
       <div className="Game-options">
-        <label htmlFor="wordLength">Letters:</label>
+        <label htmlFor="wordLength">Word length:</label>
         <input
           type="range"
           min={minLength}
@@ -325,7 +325,7 @@ function Game(props: GameProps) {
           ? "playing a challenge game"
           : seed
           ? `${describeSeed(seed)} — length ${wordLength}, game ${gameNumber}`
-          : "playing a random game"}
+          : "currently playing a random game"}
       </div>
       <p>
         <button

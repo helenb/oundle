@@ -11,7 +11,7 @@ export function About() {
           <i>Wordle</i>
         </a>{" "}
         by <a href="https://twitter.com/powerlanguish">powerlanguage</a>, and based on the <a href="https://hellowordl.net">Hellowordl</a> adaptation 
-        created by <a href="https://twitter.com/chordbug">@chordbug</a>. Oundle (a town in Northamptonshire, of course!) is a version using ONLY British place names. The answer words are almost all in the top 1000 by population, making them easier to guess as people are more likely to have heard of them, but the bigger dictionary is based on a huge list of settlements in the <a href="https://gazetteer.org.uk">Gazetteer of British Place Names</a>. Places with multi-word names have been omitted unless they are often known by a single-word version (eg Clacton is allowed, as people don't tend to call it Clacton-on-Sea). Despite all that, this game is quite hard, so don't say we didn't warn you!
+        created by <a href="https://twitter.com/chordbug">@chordbug</a>.</p> <p>Oundle (a town in Northamptonshire, of course!) is a version using ONLY British place names. The answer words are almost all in the top 1000 by population, making them easier to guess as people are more likely to have heard of them, but the bigger dictionary is based on a huge list of settlements in the <a href="https://gazetteer.org.uk">Gazetteer of British Place Names</a>. Places with multi-word names have been omitted unless they are often known by a single-word version (eg Clacton is allowed, as people don't tend to call it Clacton-on-Sea). Despite all that, this game is quite hard, so don't say we didn't warn you!
       </p>
       <p>
         You get {maxGuesses} tries to guess a target word.
