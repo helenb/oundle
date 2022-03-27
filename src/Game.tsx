@@ -94,6 +94,7 @@ function Game(props: GameProps) {
   const [target, setTarget] = useState(() => {
     resetRng();
     // Skip RNG ahead to the parsed initial game number:
+    // pretty sure this doesn't do anything either but leaving for now
     for (let i = 1; i < gameNumber; i++) randomTarget(wordLength);
     return challenge || randomTarget(wordLength);
   });

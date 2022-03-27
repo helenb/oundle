@@ -47,11 +47,19 @@ function App() {
   );
   const [enterLeft, setEnterLeft] = useSetting<boolean>("enter-left", false);
 
+  // relocate to today's url when first loading
   useEffect(() => {
-    document.body.className = dark ? "dark" : "";
-    if (urlParam("today") !== null || urlParam("todas") !== null) {
+    if ((urlParam("random") === null) && (urlParam("seed") === null)) {
       document.location = "?seed=" + todaySeed;
     }
+  },[]);
+
+  useEffect(() => {
+    document.body.className = dark ? "dark" : "";
+    // 99.99% certain this does nothing
+    // if (urlParam("today") !== null || urlParam("todas") !== null) {
+    //   document.location = "?seed=" + todaySeed;
+    // }
     setTimeout(() => {
       // Avoid transition on page load
       document.body.style.transition = "0.3s background-color ease-out";
@@ -92,18 +100,6 @@ function App() {
             {link("⚙️", "Settings", "settings")}
           </>
         )}
-      </div>
-      <div
-        style={{
-          position: "absolute",
-          left: 5,
-          top: 5,
-          visibility: page === "game" ? "visible" : "hidden",
-        }}
-      >
-        <a href={seed ? "?random" : "?seed=" + todaySeed}>
-          {seed ? "Random" : "Today's"}
-        </a>
       </div>
       {page === "about" && <About />}
       {page === "settings" && (
@@ -181,6 +177,17 @@ function App() {
           </div>
         </div>
       )}
+      <div
+        style={{
+          marginBottom: "20px",
+          visibility: page === "game" ? "visible" : "hidden",
+        }}
+      >
+        <p>{seed ? "You are doing today's puzzle" : "You are trying a random place name"}</p>
+        <a href={seed ? "?random" : "?seed=" + todaySeed}>
+          {seed ? "Try a random placename instead" : "Try today's puzzle instead"}
+        </a>
+      </div>
       <Game
         maxGuesses={maxGuesses}
         hidden={page !== "game"}
