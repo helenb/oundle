@@ -49,7 +49,7 @@ function App() {
 
   // relocate to today's url when first loading
   useEffect(() => {
-    if ((urlParam("random") === null) && (urlParam("seed") === null)) {
+    if ((urlParam("random") === null) && (urlParam("seed") === null) && (urlParam("challenge") === null)) {
       document.location = "?seed=" + todaySeed;
     }
   },[]);
